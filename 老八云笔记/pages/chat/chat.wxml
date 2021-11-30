@@ -1,0 +1,30 @@
+<!--pages/chat/chat.wxml-->
+<view class="chat">私 信</view>
+<block wx:for="{{groups}}" wx:key="id" wx:for-index="idxgrp" wx:for-item="groups">
+  <view class="list-view-groups"   id="{{groups.id}}" bindtap="groupclick">
+    <view class="list-view-image">
+      <block wx:if="{{groups.hidden}}">
+        <image class="list-image" id="image{{groups.id}}" src="/../icon/arrow_right.jpg"></image>
+      </block>
+      <block wx:else>
+        <image class="list-image" id="image{{groups.id}}" src="/../icon/arrow_down.webp"></image>
+      </block>
+    </view>
+    <view class="list-view-text">
+      <text class="list-text" id="name{{groups.id}}">{{groups.name}}</text>
+    </view>
+    <view class="list-view-count">
+      <text class="list-text-count" id="count{{groups.id}}">({{groups.count}})</text>
+    </view>
+  </view>
+  <view class="list-view-friends" hidden="{{groups.hidden}}" id="friendlist{{groups.id}}">
+    <block wx:for="{{friends}}" wx:key="id" wx:for-index="idxfrd" wx:for-item="friends">
+      <block wx:if="{{friends.group==groups.id}}">
+        <view class=" list-view-friend " id="{{groups.id}}{{friends.id}} ">
+          <image class="list-friend-image " src="{{friends.photo}} "></image>
+          <text class="list-friend-text ">{{friends.name}}</text>
+        </view>
+      </block>
+    </block>
+  </view>
+</block>

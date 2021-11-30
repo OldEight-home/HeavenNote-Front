@@ -1,0 +1,71 @@
+.chat{
+  font-size: 20px;
+  margin-top: 0px;
+  text-align: center;
+  border-bottom: 2px solid rgb(122, 122, 122);
+}
+.list-text {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+
+.list-view-groups {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  border-bottom: 1px solid lightgray;
+}
+
+.list-image {
+  margin-left: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+
+.list-view-count {
+  width: 10%;
+}
+
+
+.list-view-image {
+  width: 10%;
+}
+
+
+.list-view-text {
+  width: 80%;
+}
+
+
+.list-view-friend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  border-bottom: 1px solid lightgray;
+}
+
+
+.list-friend-image {
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+
+.list-friend-text {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+
+.list-view-friend:hover {
+  border-left: 3px solid lightgreen;
+  border-right: 3px solid lightcoral;
+}

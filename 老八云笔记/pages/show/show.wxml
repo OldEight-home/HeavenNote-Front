@@ -1,0 +1,4 @@
+<view wx:for="{{list}}" wx:key="*this">
+    {{item}}
+</view>
+<image class="submit" src="/icon/add.png" mode="widthFix" bind:tap="write">写文章</image>

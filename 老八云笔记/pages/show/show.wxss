@@ -1,0 +1,5 @@
+/* pages/show/show.wxss */
+.submit{
+  margin-left: 130px;
+  width: 64px;
+}

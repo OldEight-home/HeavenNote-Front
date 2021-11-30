@@ -1,0 +1,7 @@
+<text>一、发布说明
+于美国时间7月22日发布了Spring Boot 2.6.0-M1版本，此版本包括120 个错误修复、文档改进和依赖项升级。值得关注的新功能包括：\n
+Spring Data Envers 的自动配置\n
+更多指标支持（包括任务执行和调度导出以及对 Dynatrace v2 API 的支持）\n
+自动配置的 Spring Web 服务服务器测试\n
+改进了 Maven 插件启动目标的配置
+</text>

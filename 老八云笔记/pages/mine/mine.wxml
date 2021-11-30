@@ -1,0 +1,35 @@
+<!--<open-data type="userAvatarUrl"></open-data>-->
+
+<view class="line"></view>
+
+<view class="tuwen">
+<view class="face" tap="onceLogin">
+  <image class='headImage' src="{{hasUserInfo? userInfo.avatarUrl: '/icon/defaultAvatar.jpg'}}"
+          mode='scaleToFill' wx:if="{{canIUseGetUserProfile}}" bindtap="handleAuth"></image>
+
+</view>
+<view class='text'>{{hasUserInfo? userInfo.nickName:'点击头像登录'}}</view>
+<view class="tuwen2">
+<view class="level">{{hasUserInfo? 'Lv5':'Lv?'}}</view>
+
+<view class="sign_in" bindtap="openConfirm">签到</view>
+
+<mp-dialog title="嫩爹" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+          <view>{{hasUserInfo? '确认签到': '请先进行登录'}}</view>
+</mp-dialog>
+
+</view>
+</view>
+
+<text class="text_small">{{hasUserInfo? '关注人数 : 666':'关注人数 ：？ '}}</text>
+<view class="line"></view>
+<!-- 导航条 -->
+<view class="nav">
+  <view bindtap="navSwitch" data-index="{{hasUserInfo? 0:2}}" class="{{navState==0 ? 'nav-switch-style':''}}">订阅</view>
+  <view bindtap="navSwitch" data-index="{{hasUserInfo? 1:2}}" class="{{navState==1 ? 'nav-switch-style':''}}">关注</view>
+</view>
+<!-- 分页 -->
+<view>
+  <view wx:if="{{navState==0}}" class="style-default">还没有订阅哦</view>
+  <view wx:elif="{{navState==1}}" class="style-default">还没有关注哦</view>
+</view>

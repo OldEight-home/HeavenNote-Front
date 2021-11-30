@@ -1,0 +1,74 @@
+{
+  "pages":[ 
+    "pages/note/note",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/chat/chat",
+    "pages/society/society",
+    "pages/add/add",
+    "pages/test/test",
+    "pages/show/show",
+    "pages/arti/arti1",
+    "pages/arti/arti2",
+    "pages/arti/arti3",
+    "pages/arti/arti4",
+    "pages/arti/arti5",
+    "pages/arti/arti6",
+    "pages/arti/arti7",
+    "pages/arti/arti8"
+  ],
+  "requiredBackgroundModes": [
+  "audio",
+  "location"
+], 
+  "tabBar": {
+     "color": "#8c8c8c",
+     "selectedColor": "#000000",
+     "backgroundColor": "#FAFAFF",
+     "borderStyle": "black",
+     "list":[
+       {
+         "text": "笔记",
+         "pagePath": "pages/note/note",
+         "iconPath": "icon/note.png",
+         "selectedIconPath": "icon/note.png"
+       },
+       {
+        "text": "社区",
+        "pagePath": "pages/society/society",
+        "iconPath": "icon/society.png",
+        "selectedIconPath": "icon/society.png"
+      },
+      {
+        "text": "",
+        "pagePath": "pages/add/add",
+        "iconPath": "icon/add.png",
+        "selectedIconPath": "icon/add.png" 
+      },
+      {
+        "text": "私信",
+        "pagePath": "pages/chat/chat",
+        "iconPath": "icon/chat.png",
+        "selectedIconPath": "icon/chat.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "icon/mine.png",
+        "selectedIconPath": "icon/mine.png"
+      }
+     ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E0E0E0",
+    "navigationBarTitleText": "老八笔记", 
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true
+  },
+  "useExtendedLib":{
+    "weui": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

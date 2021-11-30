@@ -1,0 +1,13 @@
+<!--pages/add/add.wxml-->
+<view class="page-section">
+  <form bindsubmit="onSubmit">
+        <input type="text" maxlength="10" placeholder="笔记标题" />
+  </form>
+</view>
+<form  bindsubmit="onSubmit" bindreset="">
+    <view class='row' id="textareawrap" catchtap="onFocus">
+        <textarea  fixed="true" class='text' value="{{note.content}}" maxlength="-1"  
+        focus='{{focus}}' name="content"   placeholder="请输入文本" />
+    </view>
+</form>
+

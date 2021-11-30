@@ -1,0 +1,99 @@
+.line{
+  height: 2px;
+  width:100%;
+  background-color: rgb(121, 121, 121);
+}
+.tuwen{
+	display: flex;
+	flex-direction: row;
+}
+.tuwen2{
+	display: flex;
+	flex-direction: column;
+}
+.face{
+  flex-shrink:0;
+  margin-left: 15px;
+  margin-top: 12px;
+	width:60px;
+	height:60px;
+	overflow: hidden;
+	border-radius:50%;
+}
+
+.headImage {
+	display: flex;
+	width: 60px;
+	height: 60px;
+}
+
+.loginout{
+  margin-left: 15px;
+  margin-top: 128px;
+	height: 24px;
+    width:48px;
+  background-color: #40a9ff;
+  color: white;
+  overflow: hidden;
+}
+
+.text{
+	display: flex;
+	flex-direction: column;
+	margin-left: 28px;
+	margin-top: 30px;
+	font-size: 20px;
+}
+.level{
+	margin-top: 15px;
+	margin-left: 70px;
+	font-size: 25px;
+	color: rgb(241, 157, 1);
+}
+.sign_in{
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-left: 60px;
+	width: 60px;
+	text-align: center;
+	line-height: 30px;
+	height: 30px;
+	border: 2px solid gray;
+}
+
+.text_small{
+	font-size: 27rpx;
+	word-break: break-all;
+	display: flex;
+	margin-left: 100px;
+	margin-top: -20px;
+}
+.line{
+  margin-top: 18px;
+  height: 2px;
+  width:100%;
+  background-color: rgb(121, 121, 121);
+}
+.nav{
+	margin-top: -1px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  background-color: rgb(252, 252, 252);
+  font-size: 30rpx;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.nav-switch-style{
+  color: rgb(235, 94, 0);
+}
+.style-default{
+  background-color: rgb(211, 211, 211);
+  padding: 100% 0;
+  text-align: center;
+}
+.style-roll{
+  background-color: rgb(130, 177, 247);
+  padding: 100% 0;
+  text-align: center;
+}

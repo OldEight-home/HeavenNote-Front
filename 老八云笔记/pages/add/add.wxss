@@ -1,0 +1,30 @@
+/* pages/add/add.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.page-section{
+  margin-top: 5px;
+  height: 25px;
+  color:rgb(0, 0, 0);
+  border:3px solid rgb(255, 254, 254);
+  border-radius: 10px;
+  font-size: 20px;
+}
+.row{
+  flex: 1;
+  display: flex;
+  width: 97%;
+  margin-top: 5px;
+  margin-left: 3px;
+  height:100%;
+  overflow: hidden;
+}
+.row .text{
+  flex: 1;
+  width: 97%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;    
+}

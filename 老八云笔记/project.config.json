@@ -41,13 +41,10 @@
         "packNpmManually": false,
         "packNpmRelationList": [],
         "minifyWXSS": true,
-        "disableUseStrict": false,
-        "minifyWXML": true,
-        "showES6CompileOption": false,
-        "useCompilerPlugins": false
+        "showES6CompileOption": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.19.4",
+    "libVersion": "2.14.1",
     "appid": "wx8198978eca8007f7",
     "projectname": "%E4%BA%91%E7%AC%94%E8%AE%B0",
     "debugOptions": {

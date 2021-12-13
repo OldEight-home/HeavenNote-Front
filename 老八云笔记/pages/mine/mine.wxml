@@ -10,9 +10,10 @@
 </view>
 <view class='text'>{{hasUserInfo? userInfo.nickName:'点击头像登录'}}</view>
 <view class="tuwen2">
-<view class="level">{{hasUserInfo? 'Lv5':'Lv?'}}</view>
+<view class="level">{{hasUserInfo? 'Lv1':'Lv?'}}</view>
 
 <view class="sign_in" bindtap="openConfirm">签到</view>
+
 
 <mp-dialog title="嫩爹" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
           <view>{{hasUserInfo? '确认签到': '请先进行登录'}}</view>
@@ -21,7 +22,8 @@
 </view>
 </view>
 
-<text class="text_small">{{hasUserInfo? '关注人数 : 666':'关注人数 ：？ '}}</text>
+<text class="text_small" wx:if="{{!hasUserInfo}}">关注人数：0</text>
+<text class="text_small" wx:if="{{hasUserInfo}}">关注人数：{{followerNum}}</text>
 <view class="line"></view>
 <!-- 导航条 -->
 <view class="nav">

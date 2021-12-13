@@ -1,5 +1,7 @@
+var app=getApp();
 Page({
   data: {
+    /*
     artlist:[
       { imag: '/icon/hashmap.jpg', text: "HashMap 是一个用于存储 Key-Value 键值对的集合,每一个键值对也叫做...", id:"1" },
       { imag: '/icon/docker.jpg', text: "Docker基础学习笔记", id:"2" },
@@ -9,13 +11,43 @@ Page({
       { imag: '/icon/house.jpg', text: "北上广深杭房价高压下，这也许是程序员扎根的唯一出路...", id:"6" },
       { imag: '/icon/code.jpg', text: "C++学习笔记（3）：数组和函数", id:"7" },
       { imag: '/icon/java.jpg', text: "你以为我在玩游戏？其实我在学 Java", id:"8" }
-    ]
+    ]*/
+    noteList:[]
   },
+  
+  onShow:function(){
+    this.getConmmunityNoteList();
+  },
+  
   gotoPage:function(event){
     var number = event.currentTarget.dataset.id;
     var url = "/pages/arti/arti"+number;
     wx.navigateTo({
       url: url,
     })
+  },
+  getConmmunityNoteList: function(){
+    let that=this;
+    wx.request({
+      method: 'POST',
+      url: 'http://localhost:8081/api/v1/note/communityPage', //communityPage
+      data:{
+        currentPage:1,  //这次填的是页数
+        size:50          //这次填的是一页展示几条笔记
+      },
+      header:{
+        "content-type": "application/json",
+        "token": app.globalData.token
+      },
+      success: (res)=> {
+        let result = res.data;
+        if(result.code == 200) {
+          that.setData({
+            noteList: result.data
+        })
+        console.log(result.data)
+        }
+      }
+  })
   }
 })

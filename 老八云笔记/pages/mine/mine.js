@@ -5,7 +5,8 @@ Page({
     canIUseGetUserProfile: false,
     userInfo: {},
     hasUserInfo: false,
-    avatarUrl: '/icon/defaultAvatar.jpg'
+    avatarUrl: '/icon/defaultAvatar.jpg',
+    followerNum:0
   },
 
   onLoad: function () {
@@ -90,7 +91,7 @@ Page({
     }).then(res => {
       // 请求服务器
       wx.request({
-        url: 'http://120.55.41.172:8081/api/v1/wx/session',
+        url: 'http://localhost:8081/api/v1/wx/session',  //120.55.41.172
         method: 'post',
         data: {
           code: res.code,
@@ -103,9 +104,11 @@ Page({
         success(res) {
           let result = res.data
           if(result.code == 200) {
-            console.log("token:"+result.data.token)
-            app.globalData.token = result.data.token
+            console.log("token:"+result.data.token);
+            app.globalData.token = result.data.token;
+            that.getFollowerNum();  
           }
+          
         }
       })
     }).catch((err) => {
@@ -122,7 +125,24 @@ Page({
       key: 'userInfo',
     })
   },
-
+  getFollowerNum:function(){
+    wx.request({
+      method: 'get',
+      url: 'http://localhost:8081/api/v1/user/followerNum', 
+      header:{
+        "content-type": "application/json",
+        "token": app.globalData.token
+      },
+      success: (res)=> {
+        let result = res.data;
+        if(result.code == 200) {
+            this.setData({
+              followerNum:result.data
+            })    
+        }
+      }
+  })
+  },
 
 
   

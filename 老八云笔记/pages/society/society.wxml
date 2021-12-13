@@ -5,12 +5,24 @@
 </view>
 
 <view class='content'>
-<block wx:for="{{artlist}}">
+<block wx:for="{{noteList}}" wx:for-item="note">
 <view class="line1"></view>
+<!--
   <view class='artImg'data-id="{{item.id}}" bindtap="gotoPage">
     <image src='{{item.imag}}'></image>
   </view>
   <text class='art'>{{item.text}}</text>
+  -->
+  <view class="noteInfo" bindtap="openNote">
+    <view class="title">{{note.title}}</view>
+    <view class="desc">{{note.description}}</view>
+    <view class="bottomInfo">
+      <view class="author">{{note.userName}}</view>
+      <view class="dateTime">{{note.updateTime}}</view>
+      <image class="noteCountImg" src="/icon/浏览量.png"></image>
+      <view class="noteCount">{{note.noteCount}}</view>
+    </view>
+  </view>
 <view class="line2"></view>
 </block>
 </view>

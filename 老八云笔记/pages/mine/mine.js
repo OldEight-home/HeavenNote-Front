@@ -6,7 +6,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     avatarUrl: '/icon/defaultAvatar.jpg',
-    followerNum:0
+    followerNum:0,
+    noteList:[]
   },
 
   onLoad: function () {
@@ -91,7 +92,7 @@ Page({
     }).then(res => {
       // 请求服务器
       wx.request({
-        url: 'http://localhost:8081/api/v1/wx/session',  //120.55.41.172
+        url: 'http://120.55.41.172:8081/api/v1/wx/session',  //120.55.41.172
         method: 'post',
         data: {
           code: res.code,
@@ -128,7 +129,7 @@ Page({
   getFollowerNum:function(){
     wx.request({
       method: 'get',
-      url: 'http://localhost:8081/api/v1/user/followerNum', 
+      url: 'http://120.55.41.172:8081/api/v1/user/followerNum', 
       header:{
         "content-type": "application/json",
         "token": app.globalData.token
@@ -164,8 +165,33 @@ Page({
     this.setData({
       navState:index
     })
+    if(index==0){
+        this.getSubscriptionList();
+    }
   },
-
+  getSubscriptionList:function(){
+    let that=this;
+    wx.request({
+      method: 'POST',
+      url: 'http://120.55.41.172:8081/api/v1/subscription/show', //communityPage
+      data:{
+        
+      },
+      header:{
+        "content-type": "application/json",
+        "token": app.globalData.token
+      },
+      success: (res)=> {
+        let result = res.data;
+        if(result.code == 200) {
+          that.setData({
+            noteList: result.data
+        })
+        console.log(result.data)
+        }
+      }
+  })
+  },
   data:{
     dialogShow: false,
     buttons: [{text: '签到了'}/*, {text: '确定'}*/],
@@ -180,6 +206,11 @@ Page({
   this.setData({
       dialogShow: false,
       showOneButtonDialog: false
+    })
+  },
+  openNote:function(e){
+    wx.navigateTo({
+      url: '/pages/noteDetail/noteDetail?noteId='+e.currentTarget.dataset.noteid+'&isInCommunity='+e.currentTarget.dataset.isInCommunity,
     })
   },
 })

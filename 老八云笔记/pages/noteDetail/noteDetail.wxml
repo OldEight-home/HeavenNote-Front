@@ -1,0 +1,30 @@
+<!--pages/noteDetailCommunity.wxml-->
+<view>
+    <view class="title">{{noteDetail.title}}</view>
+    <view class="headView">
+        <image class="userAvatar" src="{{noteDetail.userAvatar}}"></image>
+        <view class="nameAndTime">
+            <view class="userName">{{noteDetail.userName}}</view>
+            <view class="updateTime">{{noteDetail.updateTime}}</view>
+        </view>
+        <image class="noteCountImg" src="../../icon/view.png">{{noteDetail.noteCount}}</image>
+        <button wx:if="{{!isInCommunity}}" style="width:48px;height: 48rpx;padding:0;margin-top: 6px;"  class="edit" bindtap="goToEdit">编辑</button>      
+        
+            <button wx:if="{{isInCommunity}}" class="follow" style="width:48px;height: 48rpx;padding:0;margin-top: 6px;" >关注</button>       
+            <button style="width:48px;height: 48rpx;padding:0;margin-top: 6px;" wx:if="{{isInCommunity}}" class="subscription" bindtap="openConfirm">订阅</button>      
+            <mp-dialog title="确认订阅此笔记？"  show="{{dialogShow}}" bindbuttontap="tapDialogButton" 
+    bindclose="bindClose" buttons="{{buttons}}"></mp-dialog>
+            <mp-dialog title="请先登录"  show="{{notLoginShow}}" bindbuttontap="tapNotLoginButton" 
+    bindclose="bindClose" buttons="{{oneButton}}"></mp-dialog>
+           <mp-dialog title="订阅成功" show="{{subSuccess}}" bindbuttontap="tapSuccessButton" 
+    bindclose="bindClose" buttons="{{oneButton}}"></mp-dialog>
+           <mp-dialog title="已经订阅过了" show="{{hasSub}}" bindbuttontap="tapHasSubButton" 
+    bindclose="bindClose" buttons="{{oneButton}}"></mp-dialog>
+        
+    
+    </view>
+    
+   
+    <text class="content">{{noteDetail.content}}</text>
+
+</view>

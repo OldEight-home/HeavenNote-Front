@@ -1,25 +1,21 @@
+<!--
 <view class="search">
   <form bindsubmit="onSubmit">
     <input type="text" maxlength="25" placeholder=" 搜一下吧" /> 
   </form>
 </view>
-
+-->
 <view class='content'>
 <block wx:for="{{noteList}}" wx:for-item="note">
 <view class="line1"></view>
-<!--
-  <view class='artImg'data-id="{{item.id}}" bindtap="gotoPage">
-    <image src='{{item.imag}}'></image>
-  </view>
-  <text class='art'>{{item.text}}</text>
-  -->
-  <view class="noteInfo" bindtap="openNote">
+
+  <view class="noteInfo" bindtap="openNote" data-noteId="{{note.noteId}}" data-isInCommunity="true">
     <view class="title">{{note.title}}</view>
     <view class="desc">{{note.description}}</view>
     <view class="bottomInfo">
       <view class="author">{{note.userName}}</view>
       <view class="dateTime">{{note.updateTime}}</view>
-      <image class="noteCountImg" src="/icon/浏览量.png"></image>
+      <image class="noteCountImg" src="../../icon/view.png"></image>
       <view class="noteCount">{{note.noteCount}}</view>
     </view>
   </view>

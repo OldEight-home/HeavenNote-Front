@@ -57,12 +57,6 @@
   font-weight: 600;
   font-size: 20px;
 }
-/*
-margin-bottom: 10px;
-  font-size: 16px;
-  padding: 16px 24px;
-  align-items: initial;
-*/
 .desc{
   display: flex;
   align-items: center;

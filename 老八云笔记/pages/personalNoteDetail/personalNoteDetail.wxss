@@ -1,0 +1,61 @@
+/* pages/noteDetailCommunity.wxss */
+.title{
+    display: flex;
+    align-items: center;
+    color: #131212;
+    font-weight: 600;
+    font-size: 33px;
+}
+.headView{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+}
+.userAvatar{
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    height:34px;
+    width: 34px;
+    left:2%;
+}
+.nameAndTime{
+    display: flex;
+    flex-direction: column;
+    margin-left: 46px;
+}
+.userName{
+    display: flex;
+    position: absolute;
+    font-size: 15px;
+    left: 12%;
+}
+.updateTime{
+    display: flex;
+    font-size: 10px;
+    margin-top: 32%;
+}
+.noteCount{
+    flex-direction: row;  
+    margin-left: 2%;
+
+}
+.noteCountImg{
+    display: flex;
+    align-items: center;
+    height:25px;
+    width: 33px;
+    font-size: 11px;
+    color: #464343;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+/*
+.follow{
+    display: flex;
+    width: 10px;
+
+}
+*/
+

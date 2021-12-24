@@ -1,0 +1,8 @@
+<!--components/notLogin/notLogin.wxml-->
+<view class="headview">
+    <view class='headImageView'>
+              <image class='headImage' src="/icon/default_headicon.png"
+          mode='scaleToFill'></image>
+   </view>
+   <view class='contentText'>请到个人主页登录后同步数据</view>
+</view>

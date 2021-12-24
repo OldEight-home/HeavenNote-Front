@@ -1,0 +1,38 @@
+/* components/notLogin/notLogin.wxss */
+.headView {
+    margin: 0rpx 50rpx 40rpx 50rpx;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+  
+  .headImageView {
+    display: flex;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 0px;
+    height: 50px;
+    top:20%;
+    left:30%;
+  }
+  
+  .headImage {
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    
+  }
+  
+  .contentText {
+    position: absolute;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #4a4e55;
+    text-align: center;
+    top:50%;
+    left:15%;
+  }

@@ -1,13 +1,27 @@
 <!--pages/add/add.wxml-->
-<view class="page-section">
-  <form bindsubmit="onSubmit">
-        <input type="text" maxlength="10" placeholder="笔记标题" />
-  </form>
+<view wx:if="{{!isLogin}}">
+  <notLogin/>
 </view>
-<form  bindsubmit="onSubmit" bindreset="">
+
+<view wx:if="{{isLogin}}" class="noteInfo">
+  <!--<view class="page-section"> -->
+    <form bindsubmit="onSubmit">
+        <input type="text" name="title" maxlength="10" placeholder="笔记标题" />  
     <view class='row' id="textareawrap" catchtap="onFocus">
-        <textarea  fixed="true" class='text' value="{{note.content}}" maxlength="-1"  
-        focus='{{focus}}' name="content"   placeholder="请输入文本" />
+        <textarea wx:if="{{isTextAreaShow}}" fixed="true" class='text' value="{{content}}" maxlength="-1"  
+        focus='{{focus}}' name="content"  placeholder="请输入文本"></textarea>
     </view>
+    <button class="submit" form-type="submit" bindtap="openConfirm">
+      <image  src="/icon/sure.png"  ></image>
+    </button>
+
+    <mp-dialog title="保存笔记"  show="{{dialogShow}}" bindbuttontap="tapDialogButton" 
+    bindclose="bindClose" buttons="{{buttons}}"></mp-dialog>
+
 </form>
+ <!-- </view> -->
+  
+  
+</view>
+
 

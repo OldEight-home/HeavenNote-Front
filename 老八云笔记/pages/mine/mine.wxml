@@ -32,6 +32,24 @@
 </view>
 <!-- 分页 -->
 <view>
-  <view wx:if="{{navState==0}}" class="style-default">还没有订阅哦</view>
-  <view wx:elif="{{navState==1}}" class="style-default">还没有关注哦</view>
+  
+    <view wx:if="{{navState==0}}" class="style-default">
+      <block wx:for="{{noteList}}" wx:for-item="note">
+<view class="line1"></view>
+
+  <view class="noteInfo" bindtap="openNote" data-noteId="{{note.noteId}}" data-isInCommunity="true">
+    <view class="title">{{note.title}}</view>
+    <view class="desc">{{note.description}}</view>
+    <view class="bottomInfo">
+      <view class="author">{{note.userName}}</view>
+      <view class="dateTime">{{note.updateTime}}</view>
+      <image class="noteCountImg" src="../../icon/view.png"></image>
+      <view class="noteCount">{{note.noteCount}}</view>
+    </view>
+  </view>
+<view class="line2"></view>
+</block>
+    </view>
+  
+  <view wx:if="{{navState==1}}" class="style-default">还没有关注哦</view>
 </view>

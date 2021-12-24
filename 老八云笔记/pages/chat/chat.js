@@ -1,34 +1,36 @@
+var app=getApp()
 Page({
   data: {
+      isLogin:false,
       friends: [{
           id: 1,
           name: "老八",
-          photo: "/../icon/eight.jpeg",
+          photo: "../../icon/eight.jpeg",
           group: 1
       }, {
           id: 2,
           name: "小八",
-          photo: "/../icon/eight.jpeg",
+          photo: "../../icon/eight.jpeg",
           group: 1
       }, {
           id: 3,
           name: "栋妹",
-          photo: "/../icon/dong.jpg",
+          photo: "../../icon/dong.jpg",
           group: 2
       }, {
           id: 4,
           name: "超人",
-          photo: "/../icon/superman.jpg",
+          photo: "../../icon/superman.jpg",
           group: 3
       }, {
           id: 5,
           name: "奥特曼", 
-          photo: "/../icon/aoteman.webp",
+          photo: "../../icon/aoteman.webp",
           group: 3
       }, {
           id: 6,
           name: "帅仔",
-          photo: "/../icon/aoteman1.jpg",
+          photo: "../../icon/aoteman1.jpg",
           group: 3
       }
       ],
@@ -49,6 +51,31 @@ Page({
           count: 3
       }],
       expanded: false,
+  },
+  onShow:function(){
+    let that=this;
+    wx.request({
+      url: 'http://120.55.41.172:8081/api/v1/note/verify',
+      method: 'get',
+      header: {
+        'content-type': 'application/json;charset=UTF-8',
+        "token": app.globalData.token
+      },
+      success(res) {
+        let result = res.data
+        if(result.code == 200) {
+            that.setData({
+              isLogin:true
+            })
+        }
+        else{
+          that.setData({
+            isLogin:false
+          })
+        }
+        
+      }
+    })
   },
   groupclick: function (e) {
       var id = e.currentTarget.id, groups = this.data.groups;

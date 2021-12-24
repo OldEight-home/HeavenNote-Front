@@ -1,13 +1,17 @@
 <!--pages/chat/chat.wxml-->
-<view class="chat">私 信</view>
+<view wx:if="{{!isLogin}}">
+  <notLogin/>
+</view>
+<view wx:if="{{isLogin}}">
+<view  class="chat">私 信</view>
 <block wx:for="{{groups}}" wx:key="id" wx:for-index="idxgrp" wx:for-item="groups">
   <view class="list-view-groups"   id="{{groups.id}}" bindtap="groupclick">
     <view class="list-view-image">
       <block wx:if="{{groups.hidden}}">
-        <image class="list-image" id="image{{groups.id}}" src="/../icon/arrow_right.jpg"></image>
+        <image class="list-image" id="image{{groups.id}}" src="../../icon/arrow_right.jpg"></image>
       </block>
       <block wx:else>
-        <image class="list-image" id="image{{groups.id}}" src="/../icon/arrow_down.webp"></image>
+        <image class="list-image" id="image{{groups.id}}" src="../../icon/arrow_down.webp"></image>
       </block>
     </view>
     <view class="list-view-text">
@@ -28,3 +32,4 @@
     </block>
   </view>
 </block>
+</view>
